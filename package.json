@@ -1,0 +1,21 @@
+{
+  "name": "m-player-folder",
+  "version": "1.0.0",
+  "description": "Reproductor de musica que detecta los archivos colocados en el directorio music.",
+  "main": "main.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "fs": "0.0.1-security",
+    "nodemon": "^1.19.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "nodemon main.js"
+  },
+  "keywords": [
+    "music",
+    "player"
+  ],
+  "author": "@mosquerapaul",
+  "license": "ISC"
+}
