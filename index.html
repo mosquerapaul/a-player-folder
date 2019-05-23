@@ -3,10 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="main.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <script type="text/javascript">
+        $(function() {
+            $('#loadList').on('click', function() {
+                $.ajax({
+                    type: 'GET',
+                    url: '/playlist',
+                    success: function(response) {
+                        console.log(`load success${response}`);
+                        $('#faplayer').html(response);
+                    }
+                })
+            })
+        })
+    </script>
+    <link rel="stylesheet" href="css/style.css">
     <title>Folder Audio Player</title>
 </head>
 <body>
+    <a id="loadList" class="button" href="#">Load Playlist</a>
     <main id="faplayer"></main>
 </body>
 </html>
