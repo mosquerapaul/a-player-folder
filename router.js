@@ -11,7 +11,11 @@ const PORT = 3000;
  * CONTROLLERS IMPORT
 ************************************************/
 const {indexController} = require('./controller/indexController.js');
-const {playlistController} = require('./controller/playlistController.js');
+const {
+    playlistController, 
+    playlistToDBController, 
+    playlistShowController
+} = require('./controller/playlistController.js');
 const {dbupdateController} = require('./controller/dbupdateController.js')
 const uploadController = () => res.send('undefined controller');
 
@@ -21,7 +25,9 @@ const uploadController = () => res.send('undefined controller');
  * ROUTING RESOLV
 ************************************************/
 app.get(['/'], indexController);
-app.get(['/playlist'], playlistController);
+app.get(['/', '/playlist'], playlistController);
+app.get(['/playlist'], playlistToDBController);
+app.get(['/playlist'], playlistShowController);
 app.get(['/dbupdate'], dbupdateController);
 app.post('/upload', uploadController);
 
