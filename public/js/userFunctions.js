@@ -19,4 +19,22 @@ $(function() {
             }
         });
     });
+    $('#new-audio').on('click', function() {
+        $('#newFileBackground').show(1000);
+    });
+    $('#modal-close').on('click', function() {
+        $('#newFileBackground').hide(500);
+    });
+
+    $('#file-upload').on('click', function() {
+        $.ajax({
+            type: 'POST',
+            url: '/audioupload',
+            success: function(response) {
+                console.log(`load success: \n${response}`);
+            }
+        });
+    });
+
+    $('#newFileBackground').hide();
 })
