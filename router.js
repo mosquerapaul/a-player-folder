@@ -24,7 +24,7 @@ const uploadController = () => res.send('undefined controller');
 /***********************************************
  * ROUTING RESOLV
 ************************************************/
-app.get(['/'], indexController);
+app.get(['/', '/public', '/public/index.html'], indexController);
 app.get(['/', '/playlist'], playlistController);
 app.get(['/playlist'], playlistToDBController);
 app.get(['/playlist'], playlistShowController);
