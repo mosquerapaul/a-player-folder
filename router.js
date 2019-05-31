@@ -12,6 +12,7 @@ const PORT = 3000;
  * CONTROLLERS IMPORT
 ************************************************/
 const {indexController} = require('./controller/indexController.js');
+<<<<<<< HEAD
 const {
     playlistController, 
     playlistToDBController, 
@@ -20,6 +21,11 @@ const {
 const {dbupdateController} = require('./controller/dbupdateController.js');
 const {modalUploadController} = require('./controller/modalUploadController.js');
 const {uploadController} = require('./controller/uploadController.js');
+=======
+const {playlistController} = require('./controller/playlistController.js');
+const {dbupdateController} = require('./controller/dbupdateController.js')
+const uploadController = () => res.send('undefined controller');
+>>>>>>> Static public files moved to public directory
 
 /***********************************************
  *  ENCODING PARAMETERS
@@ -30,6 +36,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 /***********************************************
  * ROUTING RESOLV
 ************************************************/
+<<<<<<< HEAD
 app.get(['/', '/public', '/public/index.html'], indexController);
 app.get(['/', '/playlist'], playlistController);
 app.get(['/playlist'], playlistToDBController);
@@ -38,10 +45,21 @@ app.get(['/dbupdate'], dbupdateController);
 app.get('/modal-upload', modalUploadController);
 app.post(['/file-upload', '/audioupload'], uploadController);
 
+=======
+app.get(['/'], indexController);
+app.get(['/playlist'], playlistController);
+app.get(['/dbupdate'], dbupdateController);
+app.post('/upload', uploadController);
+>>>>>>> Static public files moved to public directory
 
 /***********************************************
  * STATIC FILES 
 ************************************************/
+app.use( '/public', express.static('public'));
+
+/*
+ * STATIC FILES 
+*/
 app.use( '/public', express.static('public'));
 
 

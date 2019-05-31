@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /************************************
 *           COMMON ITEMS
 *************************************/
@@ -5,6 +6,9 @@
 * {
     box-sizing: border-box;
 }
+=======
+
+>>>>>>> Static public files moved to public directory
 
 body {
     padding: 10px;
@@ -12,6 +16,10 @@ body {
 
 main {
     min-height: 300px;
+<<<<<<< HEAD
+=======
+    background-color: aquamarine;
+>>>>>>> Static public files moved to public directory
 }
 
 a {
@@ -19,11 +27,17 @@ a {
     color: #58d333;
 }
 
+<<<<<<< HEAD
 .center {
     position: relative;
     left: 0;
     right: 0;
     margin: auto;
+=======
+nav ul {
+    list-style: none;
+    padding: unset;
+>>>>>>> Static public files moved to public directory
 }
 
 a.button {
@@ -35,6 +49,7 @@ a.button {
     border-radius: 5px;
     padding: 10px 25px;
     margin: 20px 20px;
+<<<<<<< HEAD
 }
 
 h1 {
@@ -183,3 +198,6 @@ input.modal-button {
 *           ICON STYLES
 ***************************************/
 
+=======
+}
+>>>>>>> Static public files moved to public directory
