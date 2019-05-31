@@ -14,6 +14,11 @@ a {
     color: #58d333;
 }
 
+nav ul {
+    list-style: none;
+    padding: unset;
+}
+
 a.button {
     display: block;
     background-color: #58d333;

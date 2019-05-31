@@ -12,6 +12,7 @@ const PORT = 3000;
 ************************************************/
 const {indexController} = require('./controller/indexController.js');
 const {playlistController} = require('./controller/playlistController.js');
+const {dbupdateController} = require('./controller/dbupdateController.js')
 const uploadController = () => res.send('undefined controller');
 
 
@@ -21,8 +22,14 @@ const uploadController = () => res.send('undefined controller');
 ************************************************/
 app.get(['/'], indexController);
 app.get(['/playlist'], playlistController);
+app.get(['/dbupdate'], dbupdateController);
 app.post('/upload', uploadController);
 
+
+/*
+ * STATIC FILES 
+*/
+app.use( '/public', express.static('public'));
 
 
 
