@@ -16,7 +16,8 @@ const {
     playlistToDBController, 
     playlistShowController
 } = require('./controller/playlistController.js');
-const {dbupdateController} = require('./controller/dbupdateController.js')
+const {dbupdateController} = require('./controller/dbupdateController.js');
+const {modalUploadController} = require('./controller/modalUploadController.js');
 const uploadController = () => res.send('undefined controller');
 
 
@@ -29,6 +30,7 @@ app.get(['/', '/playlist'], playlistController);
 app.get(['/playlist'], playlistToDBController);
 app.get(['/playlist'], playlistShowController);
 app.get(['/dbupdate'], dbupdateController);
+app.get('/modal-upload', modalUploadController);
 app.post('/upload', uploadController);
 
 
