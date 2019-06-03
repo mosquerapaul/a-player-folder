@@ -1,5 +1,21 @@
+const hideModal = () => {
+    $('#modalUpload').fadeOut(1000).html("");
+}
+
+const showModal = () => {
+    $.ajax({
+        type: 'GET',
+        url: '/modal-upload',
+        success: function(response) {
+            console.log(`modal-upload load success: \n${response}`);
+            $('#modalUpload').html(response).fadeIn(1000);
+        }
+    });
+}
+
 
 $(function() {
+    $('#modalUpload').hide();
     $('#loadList').on('click', function() {
         $.ajax({
             type: 'GET',
@@ -20,13 +36,12 @@ $(function() {
         });
     });
     $('#new-audio').on('click', function() {
-        $('#newFileBackground').fadeIn(1000);
+        showModal();
     });
-    $('#modal-close').on('click', function() {
-        $('#newFileBackground').fadeOut(1000);
-    });
-    $('#newFileBackground').on('click', function() {
-        $('#newFileBackground').fadeOut(1000);
+    $('#modalUpload').on('click', function(e) {
+        console.log(e.target.id);
+        if (e.target.id !== 'modal-background' && e.target.id !== 'modal-close') return;
+        hideModal();
     });
 
     $('#file-upload').on('click', function() {
@@ -39,5 +54,4 @@ $(function() {
         });
     });
 
-    $('#newFileBackground').hide();
 })
