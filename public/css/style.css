@@ -30,22 +30,14 @@ nav ul {
     padding: unset;
     display: flex;
     justify-content: space-between;
+    max-width: 700px;
+    margin: auto;
 }
 
 .menu li {
 
 }
 
-a.button {
-    display: block;
-    background-color: #58d333;
-    color: #FFF;
-    text-align: center;
-    border: solid 1px #58d333;
-    border-radius: 5px;
-    padding: 10px 25px;
-    margin: 20px 20px;
-}
 
 h1 {
     color: #58D333;
@@ -141,6 +133,20 @@ a.modal-button {
     border-radius: 5px;
     width: 100px;
     margin: 10px auto;
+    display: none;
+}
+
+input.modal-button {
+    position: absolute;
+    width: 100px;
+    left: 0;
+    right: 0;
+    margin: 10px auto;
+    opacity: 1;
+    background-color: #FFF;
+    border: solid 1px #58d333;
+    color: #58D333;
+    border-radius: 5px;
 }
 
 input.modal-button {
@@ -172,7 +178,8 @@ input.modal-button {
 #faplayer {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 20px 40px;
-    overflow: scroll;
+    overflow-y: scroll;
+    scrollbar-color: #58D333;
 }
 
 #faplayer li {

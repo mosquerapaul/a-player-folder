@@ -20,10 +20,13 @@ $(function() {
         });
     });
     $('#new-audio').on('click', function() {
-        $('#newFileBackground').show(1000);
+        $('#newFileBackground').fadeIn(1000);
     });
     $('#modal-close').on('click', function() {
-        $('#newFileBackground').hide(500);
+        $('#newFileBackground').fadeOut(1000);
+    });
+    $('#newFileBackground').on('click', function() {
+        $('#newFileBackground').fadeOut(1000);
     });
 
     $('#file-upload').on('click', function() {
