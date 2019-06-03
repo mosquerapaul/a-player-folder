@@ -1,3 +1,6 @@
+/************************************
+*           COMUN ITEMS
+*************************************/
 
 * {
     box-sizing: border-box;
@@ -17,17 +20,6 @@ a {
     color: #58d333;
 }
 
-nav ul {
-    list-style: none;
-    padding: unset;
-    display: flex;
-    justify-content: space-between;
-}
-
-.menu li {
-
-}
-
 a.button {
     display: block;
     background-color: #58d333;
@@ -39,7 +31,31 @@ a.button {
     margin: 20px 20px;
 }
 
-#newFileBackground {
+
+
+/************************************
+*           HEADER
+*************************************/
+
+nav ul {
+    list-style: none;
+    padding: unset;
+    display: flex;
+    justify-content: space-between;
+    max-width: 700px;
+    margin: auto;
+}
+
+.menu li {
+
+}
+
+
+/************************************
+*           MODAL WINDOW
+*************************************/
+
+.modal-fill {
     background-color: rgba(0, 0, 0, 0.8);
     width: 100%;
     height: 100%;
@@ -59,21 +75,25 @@ a.button {
     border-radius: 5px 5px 0 0;
 }
 
-#modal-close {
+.modal-close-button {
     position: absolute;
-    top: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.1);
+    top: -27px;
+    right: 3px;
+    background-color: rgba(0, 100, 0, 0.4);
+    color: white;
+    font-size: 1.5em;
     border: none;
     border-radius: 4px;
     height: 100%;
     width: 25px;
+    z-index: -1;
 }
 
-#newFile {
+.modal-body {
     background-color: azure;
     position: absolute;
     width: 80%;
+    max-width: 400px;
     margin: auto;
     top: 0;
     bottom: 0;
@@ -89,7 +109,11 @@ input.file {
     display: block;
 }
 
-a.modal {
+div.modal-submit {
+    position: relative;
+}
+
+a.modal-button {
     display: block;
     text-align: center;
     border: solid 1px #58d333;
@@ -98,14 +122,40 @@ a.modal {
     left: 0;
     right: 0;
     margin: 10px auto;
+    display: none;
 }
+
+input.modal-button {
+    position: absolute;
+    width: 100px;
+    left: 0;
+    right: 0;
+    margin: 10px auto;
+    opacity: 1;
+    background-color: #FFF;
+    border: solid 1px #58d333;
+    color: #58D333;
+    border-radius: 5px;
+}
+
+
+/************************************
+*           AF PLAYER
+*************************************/
 
 #faplayer {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 20px 40px;
-    overflow: scroll;
+    overflow-y: scroll;
+    scrollbar-color: #58D333;
 }
 
 #faplayer li {
     padding-left: 20px;
 }
+
+
+/**************************************
+*           ICON STYLES
+***************************************/
+

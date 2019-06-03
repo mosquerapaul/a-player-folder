@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" rel="stylesheet" href="../public/css/style.css">
+    <script src="https://kit.fontawesome.com/c9287d35ab.js"></script>
+    <script data-search-pseudo-elements defer src="https://use.fontawesome.com/releases/latest/js/all.js" integrity="sha384-L469/ELG4Bg9sDQbl0hvjMq8pOcqFgkSpwhwnslzvVVGpDjYJ6wJJyYjvG3u8XW7" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
     <script type="text/javascript" src="../public/js/userFunctions.js"> </script>
@@ -24,13 +26,23 @@
     </header>
     
     <main id="faplayer"></main>
-    <div id="newFileBackground"><div id="newFile">
-        <div class="modal-header">
-            <span>Upload a new audio file</span>
-            <button id="modal-close">x</button>
+
+    <!-- MODAL WINDOW - FILE UPLOAD -->
+    <div class="modal-fill" id="newFileBackground">
+        <div class="modal-body" id="newFile">
+            <div class="modal-header">
+                <span>Upload a new audio file</span>
+                <button class="modal-close-button" id="modal-close" title="Close window">x</button>
+            </div>
+            <form action="/file-upload" method="POST">
+                <input class="file" type="file">
+                <div class="modal-submit">
+                    <input class="modal-button" type="submit" value="Upload" required>
+                    <a href="#" id="file-upload" class="modal-button">Upload</a>
+                </div>
+                
+            </form>
         </div>
-        <input class="file" type="file">
-        <a href="#" id="file-upload" class="modal">Upload</a>
-    </div></div>
+    </div>
 </body>
 </html>
