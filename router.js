@@ -46,7 +46,7 @@ app.use( '/public', express.static('public'));
 
 /*
  * STATIC FILES 
-*/
+************************************************/
 app.use( '/public', express.static('public'));
 
 
