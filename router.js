@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 
 const app = express();
+const bodyParser = require('body-parser');
 
 const PORT = 3000;
 
@@ -20,6 +21,10 @@ const {dbupdateController} = require('./controller/dbupdateController.js');
 const {modalUploadController} = require('./controller/modalUploadController.js');
 const uploadController = () => res.send('undefined controller');
 
+/***********************************************
+ *  ENCODING PARAMETERS
+************************************************/
+app.use(bodyParser.urlencoded({extended: true}));
 
 
 /***********************************************
@@ -34,9 +39,9 @@ app.get('/modal-upload', modalUploadController);
 app.post('/upload', uploadController);
 
 
-/*
+/***********************************************
  * STATIC FILES 
-*/
+************************************************/
 app.use( '/public', express.static('public'));
 
 
