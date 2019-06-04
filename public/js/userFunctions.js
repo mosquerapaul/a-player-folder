@@ -7,7 +7,6 @@ const showModal = () => {
         type: 'GET',
         url: '/modal-upload',
         success: function(response) {
-            console.log(`modal-upload load success: \n${response}`);
             $('#modalUpload').html(response).fadeIn(1000);
         }
     });
@@ -21,11 +20,13 @@ $(function() {
             type: 'GET',
             url: '/playlist',
             success: function(response) {
-                console.log(`load success: \n${response}`);
                 $('#faplayer').html(response);
             }
         });
     });
+
+
+    // NOT IMPLEMENTED
     $('#dbupdate').on('click', function() {
         $.ajax({
             type: 'GET',
@@ -39,11 +40,11 @@ $(function() {
         showModal();
     });
     $('#modalUpload').on('click', function(e) {
-        console.log(e.target.id);
         if (e.target.id !== 'modal-background' && e.target.id !== 'modal-close') return;
         hideModal();
     });
 
+    // NOT IMPLEMENTED
     $('#file-upload').on('click', function() {
         $.ajax({
             type: 'POST',
