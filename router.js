@@ -19,7 +19,7 @@ const {
 } = require('./controller/playlistController.js');
 const {dbupdateController} = require('./controller/dbupdateController.js');
 const {modalUploadController} = require('./controller/modalUploadController.js');
-const uploadController = () => res.send('undefined controller');
+const {uploadController} = require('./controller/uploadController.js');
 
 /***********************************************
  *  ENCODING PARAMETERS
@@ -36,7 +36,7 @@ app.get(['/playlist'], playlistToDBController);
 app.get(['/playlist'], playlistShowController);
 app.get(['/dbupdate'], dbupdateController);
 app.get('/modal-upload', modalUploadController);
-app.post('/upload', uploadController);
+app.post('/file-upload', uploadController);
 
 
 /***********************************************
