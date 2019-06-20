@@ -4,7 +4,7 @@ const AUDIOFOLDER = './audio';
 
 /****************************************
  *          PLAYLIST CONTROLLER
- * Read the /audio folder to find .mp3 files 
+ * Read the /audio folder to find .mp3 files
  * and send them to the next MW as req.files
  ****************************************/
 
