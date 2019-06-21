@@ -36,7 +36,7 @@ app.get(['/playlist'], playlistToDBController);
 app.get(['/playlist'], playlistShowController);
 app.get(['/dbupdate'], dbupdateController);
 app.get('/modal-upload', modalUploadController);
-app.post('/file-upload', uploadController);
+app.post(['/file-upload', '/audioupload'], uploadController);
 
 
 /***********************************************

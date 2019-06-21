@@ -3,31 +3,42 @@ const multer = require('multer');
 const path = require('path');
 
 
-var storage = multer.diskStorage({
-	destination: function(req, file, callback) {
-		callback(null, './audio')
-	},
-	filename: function(req, file, callback) {
-		console.log(file);
-		callback(null, file.originalname)
-	}
-})
+
+function checkMP3magicNumbers(fileNumbers) {
+    return  fileNumbers.toUpperCase().slice(0, 4) === 'FFFB' || 
+            fileNumbers.slice(0, 6) === '494433';
+}
+
+
+
+
 
 
 const uploadController = (req, res) => {
-	var upload = multer({
-		storage: storage,
-        fileFilter: function(req, file, callback) {
-			var ext = path.extname(file.originalname)
-			if (ext !== '.mp3') {
-				return callback(res.send('Only .mp3 files are allowed'), null)
-			}
-			callback(null, true)
-		}
-	}).single('uploadFile')
+
+    console.log('File loading');
+
+    var upload = multer({
+        storage: multer.memoryStorage()
+    }).single('uploadFile');
+
+
 	upload(req, res, function(err) {
-        console.log('File is uploaded');
-        res.redirect('/');
+        var buffer = req.file.buffer;
+        var magicNum = buffer.toString('hex', 0, 4);
+        var filename = req.file.originalname;
+        var tempfilename = req.file.fieldname + '-' + Date.now() + path.extname(req.file.originalname);
+        if (checkMP3magicNumbers(magicNum)) {
+            fs.writeFile(
+                './audio/' + filename, buffer, 
+                'binary', 
+                function(err) {
+                    if(err) throw err;
+                    res.send('File is uploaded');
+                });
+        } else {
+            res.send('File is not valid. Only .mp3 files are allowed');
+        }
 	})
 }
 

@@ -1,20 +1,25 @@
 const hideModal = () => {
-    $('#modalUpload').fadeOut(1000).html("");
+    $('#modalUpload').fadeOut(1000);
 }
 
 const showModal = () => {
-    $.ajax({
-        type: 'GET',
-        url: '/modal-upload',
-        success: function(response) {
-            $('#modalUpload').html(response).fadeIn(1000);
-        }
-    });
+    if($('#modalUpload').html() === '') {
+        $.ajax({
+            type: 'GET',
+            url: '/modal-upload',
+            success: function (response) {
+                $('#modalUpload').html(response).fadeIn(1000);
+            }
+        });
+    } else {
+        $('#modalUpload').fadeIn(1000);
+    }
+
 }
 
 
 $(function() {
-    $('#modalUpload').hide();
+    $('#modalUpload').hide(0);
     $('#loadList').on('click', function() {
         $.ajax({
             type: 'GET',
@@ -42,17 +47,6 @@ $(function() {
     $('#modalUpload').on('click', function(e) {
         if (e.target.id !== 'modal-background' && e.target.id !== 'modal-close') return;
         hideModal();
-    });
-
-    // NOT IMPLEMENTED
-    $('#file-upload').on('click', function() {
-        $.ajax({
-            type: 'POST',
-            url: '/audioupload',
-            success: function(response) {
-                console.log(`load success: \n${response}`);
-            }
-        });
     });
 
 })
