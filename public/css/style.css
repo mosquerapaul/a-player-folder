@@ -133,11 +133,9 @@ a.modal-button {
     border-radius: 5px;
     width: 100px;
     margin: 10px auto;
-    display: none;
 }
 
 input.modal-button {
-    position: absolute;
     width: 100px;
     left: 0;
     right: 0;
