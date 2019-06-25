@@ -1,15 +1,14 @@
 <div class="modal-fill" id="modal-background">
-    <div id="status"></div>
     <div class="modal-body" id="newFile">
         <div class="modal-header">
             <span>Upload a new audio file</span>
             <button class="modal-close-button" id="modal-close" title="Close window">x</button>
         </div>
         <form action="/file-upload" id="upload-form" enctype="multipart/form-data" method="POST">
+            <input class="text" type="text" name="fileName">
             <input class="file" type="file" name="uploadFile" required>
             <div class="modal-submit">
                 <input class="modal-button" type="submit" value="Upload">
-                <a href="#" id="file-upload" class="modal-button">Upload</a>
             </div>
 
         </form>

@@ -8,7 +8,7 @@ $('#upload-form').submit(function() {
         },
 
         success: function (response) {
-            $("#status").empty().text(response);
+            $("#urerMsg").empty().text(response);
             console.log(response);
         }
     });
