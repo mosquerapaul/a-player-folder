@@ -137,8 +137,6 @@ a.modal-button {
 
 input.modal-button {
     width: 100px;
-    left: 0;
-    right: 0;
     margin: 10px auto;
     opacity: 1;
     background-color: #FFF;
