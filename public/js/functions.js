@@ -49,7 +49,10 @@ $(function() {
         hideModal();
     });
 
+<<<<<<< HEAD
 
     $("#urerMsg").fadeOut(0);
 
+=======
+>>>>>>> Name changes
 })
