@@ -48,11 +48,5 @@ $(function() {
         if (e.target.id !== 'modal-background' && e.target.id !== 'modal-close') return;
         hideModal();
     });
-
-<<<<<<< HEAD
-
     $("#urerMsg").fadeOut(0);
-
-=======
->>>>>>> Name changes
 })

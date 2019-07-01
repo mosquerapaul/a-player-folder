@@ -9,10 +9,7 @@ $('#upload-form').submit(function () {
         },
 
         success: function (response) {
-<<<<<<< HEAD
             hideModal();
-=======
->>>>>>> Name changes
             $("#urerMsg").empty().text(response);
             console.log(response);
             $('#urerMsg').fadeIn(1000);
