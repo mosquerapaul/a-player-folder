@@ -1,8 +1,8 @@
-const hideModal = () => {
+const hideModal = function() {
     $('#modalUpload').fadeOut(1000);
 }
 
-const showModal = () => {
+const showModal = function() {
     if($('#modalUpload').html() === '') {
         $.ajax({
             type: 'GET',
@@ -15,6 +15,12 @@ const showModal = () => {
         $('#modalUpload').fadeIn(1000);
     }
 
+}
+
+var userMessage = function (msg, timeDelay) {
+    $("#urerMsg").empty().text(msg);
+    $('#urerMsg').fadeIn(500);
+    $('#urerMsg').delay(timeDelay).fadeOut(1000);
 }
 
 

@@ -9,12 +9,9 @@ function checkMP3magicNumbers(fileNumbers) {
             fileNumbers.slice(0, 6) === '494433';
 }
 
-
-
-
-
-
 const uploadController = (req, res) => {
+
+    console.log(req.body);
 
     console.log('File loading');
 
