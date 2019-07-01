@@ -1,6 +1,7 @@
-$('#upload-form').submit(function() {
-    $("#status").empty().text("File is uploading...");
+$('#upload-form').submit(function () {
     console.log('Loading file');
+    $("#status").empty().text("File is uploading...");
+    var sendMsg;
     $(this).ajaxSubmit({
         error: function (xhr) {
             console.log('Error loading file');
@@ -8,10 +9,12 @@ $('#upload-form').submit(function() {
         },
 
         success: function (response) {
+            hideModal();
             $("#urerMsg").empty().text(response);
             console.log(response);
+            $('#urerMsg').fadeIn(1000);
+            $('#urerMsg').delay(4000).fadeOut(1000);
         }
     });
-    hideModal();
     return false;
 });

@@ -166,6 +166,7 @@ input.modal-button {
 
 
 #urerMsg {
+    display: none;
     position: fixed;
     bottom: 0;
     width: 500px;

@@ -34,6 +34,8 @@ const uploadController = (req, res) => {
                 'binary', 
                 function(err) {
                     if(err) throw err;
+
+                    console.log('File is uploded');
                     res.send('File is uploaded');
                 });
         } else {

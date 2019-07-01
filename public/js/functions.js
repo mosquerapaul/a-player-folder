@@ -49,4 +49,7 @@ $(function() {
         hideModal();
     });
 
+
+    $("#urerMsg").fadeOut(0);
+
 })
