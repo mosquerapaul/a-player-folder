@@ -4,6 +4,7 @@
 
 * {
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -26,39 +27,151 @@ a {
     margin: auto;
 }
 
+.border-radius {
+    border-radius: 5px;
+}
+
 a.button {
     display: block;
     background-color: #58d333;
     color: #FFF;
     text-align: center;
     border: solid 1px #58d333;
-    border-radius: 5px;
     padding: 10px 25px;
     margin: 20px 20px;
 }
 
 h1 {
-    color: #58D333;
+    color: #FFF;
+    background-color: #58D333;
     font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+    padding: 5px 30px;
+    border-radius: 5px 5px 0 0;
+    margin: 0;
 }
 
 
 /************************************
-*           HEADER
+*           MENÚ
 *************************************/
+
+nav {
+    display: inline-block;
+    vertical-align: top;
+    width: 25%;
+    margin: 10px;
+}
 
 nav ul {
     list-style: none;
     padding: unset;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-around;
     max-width: 700px;
     margin: auto;
 }
 
-.menu li {
-
+nav a {
+    color: #CCC;
+    text-transform: capitalize;
 }
+
+.menu-item {
+    margin-top: 7px;
+}
+
+.menu-item:first-child {
+    margin-top: 0;
+}
+
+.submenu {
+    margin-left: 10px;
+}
+
+/************************************
+*           AF PLAYER
+*************************************/
+
+#player-background {
+    max-width: 760px;
+}
+
+#player-container {
+    padding: 20px 10px;
+    background-color: #333;
+    color: #CCC;
+    font-family: 'Walter Turncoat', coursiva;
+    border: solid 10px #58D333;
+    border-top: none;
+    border-radius: 0 0 15px 15px;
+}
+
+#faplayer {
+    display: inline-block;
+    vertical-align: top;
+    width: 70%;
+    height: 100%;
+    padding: 20px;
+    background-color:  #58D33322;
+}
+
+#faplayer ol {
+    padding-inline-end: 40px;
+}
+
+#faplayer li.audio {
+    line-height: 2.2;
+    color: #CCC;
+    font-family: 'Walter Turncoat', coursiva;
+    text-transform: uppercase;
+}
+
+#controls {
+    width: 50%;
+    text-align: center;
+    font-size: 50px;
+    overflow: visible;
+    height: 60px;
+}
+
+#controls>ul {
+    margin:0;
+    padding: 0;
+}
+
+#controls li {
+    display: inline-block;
+    list-style: none;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+#play, #pause {
+    font-size: 70px;
+}
+
+/**************************************
+*           USER MESSAGES
+***************************************/
+#urerMsg {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    width: 500px;
+    padding: 20px 50px;
+    border-radius: 5px 5px 0 0;
+    max-width: 95%;
+    background-color: #333333;
+    color: #58D333;
+    text-align: center;
+    z-index: 1000;
+}
+
+/**************************************
+*           ICON STYLES
+***************************************/
 
 
 /************************************
@@ -107,7 +220,6 @@ nav ul {
     top: 0;
     bottom: 0;
     height: 200px;
-    border-radius: 5px;
 }
 
 .modal-body form {
@@ -128,7 +240,6 @@ a.modal-button {
     display: block;
     text-align: center;
     border: solid 1px #58d333;
-    border-radius: 5px;
     width: 100px;
     margin: 10px auto;
 }
@@ -140,46 +251,5 @@ input.modal-button {
     background-color: #FFF;
     border: solid 1px #58d333;
     color: #58D333;
-    border-radius: 5px;
 }
-
-
-/************************************
-*           AF PLAYER
-*************************************/
-
-#faplayer {
-    max-width: 700px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding: 20px 40px;
-    background-color: #333;
-    color: #CCC;
-    font-family: 'Walter Turncoat', coursiva;
-    border: solid 10px #58D333;
-    border-radius: 20px;
-}
-
-#faplayer li {
-    padding-left: 20px;
-}
-
-
-
-#urerMsg {
-    display: none;
-    position: fixed;
-    bottom: 0;
-    width: 500px;
-    padding: 20px 50px;
-    border-radius: 5px 5px 0 0;
-    max-width: 95%;
-    background-color: #333333;
-    color: #58D333;
-    text-align: center;
-    z-index: 1000;
-}
-
-/**************************************
-*           ICON STYLES
-***************************************/
 

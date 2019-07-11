@@ -15,23 +15,55 @@
     <title>Folder Audio Player</title>
 </head>
 <body>
-    <header>
-        <h1>AF Player</h1>
-        <nav>
-            <ul class="menu">
-                <li><a id="loadList" class="button" href="#">Load Playlist</a></li>
-                <li><a id="dbupdate" class="button" href="#">BD Update</a></li>
-                <li><a id="new-audio" class="button" href="#">New audio</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <div id="urerMsg" class="center"></div>
+    <div id="player-background" class="center border-radius">
+        <header>
+            <h1>AF Player</h1>
+        </header>
+        
 
-    <!-- PLAYER LIST -->
-    <main id="faplayer" class="center"></main>
+        <!-- PLAYER  CONTAINER -->
+        <div id="player-container">
+            <nav>
+                <ul class="menu center">
+                    <li class="menu-item"><a href="#">File</a>
+                        <div class="submenu">
+                            <ul>
+                                <li><a id="loadList" href="#">Load Playlist</a></li>
+                                <li><a id="dbupdate" href="#">BD Update</a></li>
+                                <li><a id="new-audio" href="#">New audio</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="menu-item"><a href="#">Player</a>
+                        <div class="submenu">
+                            <ul>
+                                <li><a id="loadList" href="#">Load Playlist</a></li>
+                                <li><a id="dbupdate" href="#">BD Update</a></li>
+                                <li><a id="new-audio" href="#">New audio</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="menu-item"><a href="#">Item</a></li>
+                    <li class="menu-item"><a href="#">help</a></li>
+                </ul>
+            </nav>
+            <!-- PLAYER LIST -->
+            <main id="faplayer" class="center border-radius"></main>
+            <div id="controls" class="center">
+                <ul class="controls">
+                    <li id="prev" class="control"><i class="fas fa-step-backward"></i></li>
+                    <li id="play" class="control"><i class="fas fa-play-circle"></i></li>
+                    <li id="pause" class="control"><i class="fas fa-pause-circle"></i></li>
+                    <li id="next" class="control"><i class="fas fa-step-forward"></i></li>
+                </ul>
+            </div>
+        </div>
 
-    <!-- MODAL WINDOW - FILE UPLOAD -->
-    <div id="modalUpload"></div>
+        <!-- MODAL WINDOW - FILE UPLOAD -->
+        <div id="modalUpload"></div>
+
+        <!-- MESSAGES TO USER -->
+        <div id="urerMsg" class="center"></div>
+    </div>
 </body>
 </html>
