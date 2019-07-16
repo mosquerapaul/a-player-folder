@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" rel="stylesheet" href="../public/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway|Walter+Turncoat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Audiowide&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/c9287d35ab.js"></script>
     <script data-search-pseudo-elements defer src="https://use.fontawesome.com/releases/latest/js/all.js" integrity="sha384-L469/ELG4Bg9sDQbl0hvjMq8pOcqFgkSpwhwnslzvVVGpDjYJ6wJJyYjvG3u8XW7" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -12,10 +13,11 @@
 
 
     <script type="text/javascript" src="../public/js/functions.js"> </script>
+    <script type="text/javascript" src="../public/js/styles.js"> </script>
     <title>Folder Audio Player</title>
 </head>
 <body>
-    <div id="player-background" class="center border-radius">
+    <div id="player-background" class="center container">
         <header>
             <h1>AF Player</h1>
         </header>
@@ -48,15 +50,27 @@
                 </ul>
             </nav>
             <!-- PLAYER LIST -->
-            <main id="faplayer" class="center border-radius"></main>
-            <div id="controls" class="center">
-                <ul class="controls">
-                    <li id="prev" class="control"><i class="fas fa-step-backward"></i></li>
-                    <li id="play" class="control"><i class="fas fa-play-circle"></i></li>
-                    <li id="pause" class="control"><i class="fas fa-pause-circle"></i></li>
-                    <li id="next" class="control"><i class="fas fa-step-forward"></i></li>
-                </ul>
-            </div>
+            <section id="player">
+                <main id="faplayer-audiolist" class="center container"></main>
+                <div class="bottom-container">
+                    <article id="playing-info" class="container">
+                        <p id="audio-name">Name of the audio playing
+                            <span id="audio-duration">3:35</span>
+                        </p>
+                        <div id="progress-bar-background"><div id="progress-bar"></div></div>
+                    </article>
+                    <article id="controls" class="center">
+                        <ul class="controls">
+                            <li id="prev" class="control"><i class="fas fa-step-backward"></i></li>
+                            <li id="play" class="control"><i class="fas fa-play"></i></li>
+                            <li id="pause" class="control"><i class="fas fa-pause-circle"></i></li>
+                            <li id="next" class="control"><i class="fas fa-step-forward"></i></li>
+                        </ul>
+                    </article>
+                    
+                </div>
+            </section>
+            
         </div>
 
         <!-- MODAL WINDOW - FILE UPLOAD -->
