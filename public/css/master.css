@@ -1,0 +1,84 @@
+
+@import 'modal.css';
+@import 'menu.css';
+@import 'player.css';
+@import 'responsive.css';
+@import 'icons.css';
+
+
+
+/************************************
+*           COMMON ITEMS
+*************************************/
+
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    padding: 10px;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #58d333;
+}
+
+.center {
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.container {
+    border-radius: 5px;
+}
+
+.button {
+    display: block;
+    background-color: #58d333;
+    color: #FFF;
+    text-align: center;
+    border: solid 1px #58d333;
+    border-radius: 3px;
+    padding: 10px 25px;
+    margin: 20px 10px;
+}
+
+.button-invert {
+    background-color: #FFF;
+    color: #58D333;
+}
+
+h1 {
+    color: #FFF;
+    background-color: #58D333;
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+    padding: 5px 30px;
+    border-radius: 5px 5px 0 0;
+    margin: 0;
+}
+
+
+/**************************************
+*           USER MESSAGES
+***************************************/
+#urerMsg {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    width: 500px;
+    padding: 20px 50px;
+    border-radius: 5px 5px 0 0;
+    max-width: 95%;
+    background-color: #333333;
+    color: #58D333;
+    text-align: center;
+    z-index: 1000;
+}
+
+

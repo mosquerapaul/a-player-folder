@@ -31,7 +31,7 @@ $(function() {
             type: 'GET',
             url: '/playlist',
             success: function(response) {
-                $('#faplayer').html(response);
+                $('#faplayer-audiolist').html(response);
             }
         });
     });

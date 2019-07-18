@@ -1,0 +1,45 @@
+
+/************************************
+*           MENÚ
+*************************************/
+
+nav {
+    display: inline-block;
+    vertical-align: top;
+    width: 25%;
+    min-width: 140px;
+    margin: 10px;
+    height: 100%;
+}
+
+nav ul {
+    list-style: none;
+    padding: unset;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    max-width: 700px;
+    margin: auto;
+}
+
+nav li {
+    cursor: pointer;
+}
+
+nav a {
+    color: #CCC;
+    text-transform: capitalize;
+    vertical-align: middle;
+}
+
+.menu-item {
+    margin-top: 7px;
+}
+
+.menu-item:first-child {
+    margin-top: 0;
+}
+
+.submenu {
+    margin-left: 10px;
+}
