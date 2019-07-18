@@ -1,340 +1,374 @@
+@charset "UTF-8";
 /************************************
 *           COMMON ITEMS
 *************************************/
-
 * {
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    padding: 10px;
-    margin: 0;
+  padding: 10px;
+  margin: 0;
 }
 
 a {
-    text-decoration: none;
-    color: #58d333;
+  text-decoration: none;
+  color: #0088f0;
 }
 
 .center {
-    position: relative;
-    left: 0;
-    right: 0;
-    margin: auto;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 .container {
-    border-radius: 5px;
-    background-color: #58D33311
+  border-radius: 5px;
+  background-color: #005cbd;
 }
 
-a.button {
-    display: block;
-    background-color: #58d333;
-    color: #FFF;
-    text-align: center;
-    border: solid 1px #58d333;
-    padding: 10px 25px;
-    margin: 20px 20px;
+.button {
+  display: block;
+  background-color: #0088f0;
+  color: #CCC;
+  text-align: center;
+  border: solid 1px #0088f0;
+  padding: 10px 25px;
+  margin: 20px 20px;
 }
 
 h1 {
-    color: #FFF;
-    background-color: #58D333;
-    font-family: 'Raleway', sans-serif;
-    font-size: 25px;
-    padding: 5px 30px;
-    border-radius: 5px 5px 0 0;
-    margin: 0;
-}
-
-
-/************************************
-*           MENÚ
-*************************************/
-
-nav {
-    display: inline-block;
-    vertical-align: top;
-    width: 25%;
-    margin: 10px;
-    height: 100%;
-}
-
-nav ul {
-    list-style: none;
-    padding: unset;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    max-width: 700px;
-    margin: auto;
-}
-
-nav a {
-    color: #CCC;
-    text-transform: capitalize;
-}
-
-.menu-item {
-    margin-top: 7px;
-}
-
-.menu-item:first-child {
-    margin-top: 0;
-}
-
-.submenu {
-    margin-left: 10px;
-}
-
-/************************************
-*           AF PLAYER
-*************************************/
-
-#player-background {
-    height: 100%;
-    max-width: 760px;
-}
-
-#player-container {
-    padding: 20px 10px;
-    background-color: #333;
-    color: #CCC;
-    font-family: 'Walter Turncoat', coursiva;
-    border: solid 10px #58D333;
-    border-top: none;
-    border-radius: 0 0 15px 15px;
-    height: calc(100vh - 60px);
-    max-height: 600px;
-}
-
-#player {
-    position: relative;
-    display: inline-block;
-    height: 100%;
-    width: 70%;
-}
-
-#faplayer-audiolist>ol{
-    padding: 0;
-}
-
-#faplayer-audiolist {
-    vertical-align: top;
-    padding: 20px;
-    height: calc(100% - 105px);
-    overflow-y: auto;
-}
-
-#faplayer-audiolist li.audio:first-child {
-    counter-reset:index;
-}
-
-#faplayer-audiolist li.audio::before {
-    margin-right: 5px;
-    padding: 0 5px;
-    content: counter(index);
-    counter-increment: index;
-}
-    
-
-#faplayer-audiolist li.audio {
-    list-style: none;
-    line-height: 2.2;
-    color: #CCC;
-    font-family: 'Walter Turncoat', coursiva;
-    text-transform: uppercase;
-}
-
-#faplayer-audiolist li.audio:nth-child(odd) {
-    background-color: #FFFFFF33;
-}
-
-
-#player .bottom-container {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-
-#playing-info {
-    position: relative;
-    font-family: 'Audiowide', cursive;
-    height: 55px;
-    padding: 5px;
-}
-
-p#audio-name {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    height: 20px;
-    width: 100%;
-    font-family: 'Audiowide', cursive;
-}
-
-span#audio-duration {
-    position: absolute;
-    right: 10px;
-    font-family: 'Audiowide', cursive;
-}
-
-#progress-bar-background {
-    padding: 1px;
-    width: 100%;
-    height: 7px;
-    border-radius: 3px;
-    background-color: rgb(145, 255, 111);
-}
-
-#progress-bar {
-    width: 40%;
-    height: 5px;
-    border-radius: 2px;
-    background-color: #58D333;
-}
-
-#controls {
-    vertical-align: bottom;
-    width: 50%;
-    text-align: center;
-    font-size: 40px;
-    overflow: visible;
-    height: 38px;
-    background-color: rgba(0, 0, 0, 0.4);
-    border-radius: 30px;
-    width: 240px;
-}
-
-#controls>ul {
-    margin:0;
-    padding: 0;
-    position: relative;
-    top: -10px;
-}
-
-#controls li {
-    display: inline-block;
-    list-style: none;
-    vertical-align: middle;
-    cursor: pointer;
-}
-
-#controls li:hover {
-    filter: brightness(150%);
-}
-
-#controls #play, #controls #pause {
-    font-size: 52px;
-    width: 61px;
-    height: 61px;
-}
-
-#controls #pause {
-    display: none;
-}
-
-/**************************************
-*           USER MESSAGES
-***************************************/
-#urerMsg {
-    display: none;
-    position: fixed;
-    bottom: 0;
-    width: 500px;
-    padding: 20px 50px;
-    border-radius: 5px 5px 0 0;
-    max-width: 95%;
-    background-color: #333333;
-    color: #58D333;
-    text-align: center;
-    z-index: 1000;
+  color: #CCC;
+  background-color: #0088f0;
+  font-family: 'Raleway', sans-serif;
+  font-size: 25px;
+  padding: 5px 30px;
+  border-radius: 5px 5px 0 0;
+  margin: 0;
 }
 
 /**************************************
 *           ICON STYLES
 ***************************************/
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 18px;
+  /* Preferred icon size */
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  -webkit-font-feature-settings: 'liga';
+          font-feature-settings: 'liga';
+}
 
+/************************************
+*           MENÚ
+*************************************/
+nav {
+  display: inline-block;
+  vertical-align: top;
+  width: 25%;
+  min-width: 140px;
+  margin: 10px;
+  height: 100%;
+}
+
+nav ul {
+  list-style: none;
+  padding: unset;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  max-width: 700px;
+  margin: auto;
+}
+
+nav li {
+  color: #ff993e;
+  cursor: pointer;
+}
+
+nav a {
+  color: #ff993e;
+  text-transform: capitalize;
+  vertical-align: middle;
+}
+
+nav .menu-item {
+  margin-top: 7px;
+}
+
+nav .menu-item .submenu {
+  margin-left: 10px;
+}
+
+nav .menu-item:first-child {
+  margin-top: 0;
+}
+
+/************************************
+*           AF PLAYER
+*************************************/
+#player-background {
+  height: 100%;
+  max-width: 760px;
+}
+
+#player-background #player-container {
+  padding: 20px 10px;
+  background-color: #333;
+  color: #CCC;
+  font-family: 'Walter Turncoat', coursiva;
+  border: solid 10px #0088f0;
+  border-top: none;
+  border-radius: 0 0 15px 15px;
+  height: calc(100vh - 60px);
+  max-height: 600px;
+}
+
+#player-background section#player {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  width: 70%;
+}
+
+#player-background section#player .bottom-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+#player-background section#player .bottom-container article#playing-info {
+  position: relative;
+  font-family: 'Audiowide', cursive;
+  height: 55px;
+  padding: 5px;
+}
+
+#player-background section#player .bottom-container article#playing-info p#audio-name {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 20px;
+  width: 100%;
+  font-family: 'Audiowide', cursive;
+}
+
+#player-background section#player .bottom-container article#playing-info p#audio-name span#audio-duration {
+  position: absolute;
+  right: 10px;
+  font-family: 'Audiowide', cursive;
+}
+
+#player-background section#player .bottom-container article#playing-info #progress-bar-background {
+  padding: 1px;
+  width: 100%;
+  height: 7px;
+  border-radius: 3px;
+  background-color: #ff993e;
+}
+
+#player-background section#player .bottom-container article#playing-info #progress-bar-background #progress-bar {
+  width: 40%;
+  height: 5px;
+  border-radius: 2px;
+  background-color: #b63800;
+}
+
+#player-background section#player .bottom-container article#controls {
+  vertical-align: bottom;
+  width: 50%;
+  text-align: center;
+  font-size: 40px;
+  overflow: visible;
+  height: 38px;
+  background-color: rgba(182, 56, 0, 0.4);
+  border-radius: 30px;
+  width: 240px;
+}
+
+#player-background section#player .bottom-container article#controls ul.controls {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: -10px;
+  list-style: none;
+}
+
+#player-background section#player .bottom-container article#controls ul.controls li {
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+#player-background section#player .bottom-container article#controls ul.controls li:hover {
+  -webkit-filter: brightness(150%);
+          filter: brightness(150%);
+}
+
+#player-background section#player .bottom-container article#controls ul.controls #play {
+  font-size: 52px;
+  width: 61px;
+  height: 61px;
+}
+
+#player-background section#player .bottom-container article#controls ul.controls #pause {
+  display: none;
+  font-size: 52px;
+  width: 61px;
+  height: 61px;
+}
+
+#player-background section#player main#faplayer-audiolist {
+  vertical-align: top;
+  padding: 20px;
+  height: calc(100% - 105px);
+  overflow-y: auto;
+}
+
+#player-background section#player main#faplayer-audiolist ol {
+  padding: 0;
+}
+
+#player-background section#player main#faplayer-audiolist ol li.audio {
+  list-style: none;
+  line-height: 2.2;
+  color: #CCC;
+  font-family: 'Walter Turncoat', coursiva;
+  text-transform: uppercase;
+}
+
+#player-background section#player main#faplayer-audiolist ol li.audio:first-child {
+  counter-reset: index;
+}
+
+#player-background section#player main#faplayer-audiolist ol li.audio::before {
+  margin-right: 5px;
+  padding: 0 5px;
+  content: counter(index);
+  counter-increment: index;
+}
+
+#player-background section#player main#faplayer-audiolist ol li.audio:nth-child(odd) {
+  background-color: rgba(255, 153, 62, 0.4);
+}
+
+/**************************************
+*           USER MESSAGES
+***************************************/
+article#urerMsg {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  width: 500px;
+  padding: 20px 50px;
+  border-radius: 5px 5px 0 0;
+  max-width: 95%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ff993e;
+  text-align: center;
+  z-index: 1000;
+}
 
 /************************************
 *           MODAL WINDOW
 *************************************/
-
-.modal-fill {
-    background-color: rgba(0, 0, 0, 0.8);
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    left: 0;
-    top: 0;
-}
-
 .modal-header {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #58d333;
-    color: #FFF;
-    padding: 5px 0px 5px 15px;
-    border-radius: 5px 5px 0 0;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #0088f0 !important;
+  color: #FFF;
+  padding: 5px 0px 5px 15px;
+  border-radius: 5px 5px 0 0;
 }
 
-.modal-close-button {
-    position: absolute;
-    top: -27px;
-    right: 3px;
-    background-color: rgba(0, 100, 0, 0.4);
-    color: white;
-    font-size: 1.5em;
-    border: none;
-    border-radius: 4px;
-    height: 100%;
-    width: 25px;
-    z-index: -1;
+#modal-upload div.modal-fill {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
 }
 
-.modal-body {
-    background-color: azure;
-    position: absolute;
-    width: 80%;
-    max-width: 400px;
-    top: 0;
-    bottom: 0;
-    height: 200px;
+#modal-upload div.modal-fill .modal-body {
+  background-color: #CCC;
+  position: absolute;
+  width: 80%;
+  max-width: 400px;
+  top: 0;
+  bottom: 0;
+  height: 200px;
 }
 
-.modal-body form {
-    padding: 0 20px;
-  }
-
-.modal-body input {
-    margin-top: 20px;
-    display: block;
-    width: 100%;
+#modal-upload div.modal-fill .modal-body .modal-header {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #0088f0;
+  color: #CCC;
+  padding: 5px 0px 5px 15px;
+  border-radius: 5px 5px 0 0;
 }
 
-div.modal-submit {
-    position: relative;
+#modal-upload div.modal-fill .modal-body .modal-header .modal-close-button {
+  position: absolute;
+  top: -27px;
+  right: 3px;
+  background-color: #b63800;
+  color: #CCC;
+  font-size: 1.5em;
+  border: none;
+  border-radius: 4px;
+  height: 100%;
+  width: 25px;
+  z-index: -1;
 }
 
-a.modal-button {
-    display: block;
-    text-align: center;
-    border: solid 1px #58d333;
-    width: 100px;
-    margin: 10px auto;
+#modal-upload div.modal-fill .modal-body form {
+  padding: 0 20px;
 }
 
-input.modal-button {
-    width: 100px;
-    margin: 10px auto;
-    opacity: 1;
-    background-color: #FFF;
-    border: solid 1px #58d333;
-    color: #58D333;
+#modal-upload div.modal-fill .modal-body form input {
+  margin-top: 20px;
+  display: block;
+  width: 100%;
 }
 
+#modal-upload div.modal-fill .modal-body form div.modal-submit {
+  position: relative;
+}
+
+#modal-upload div.modal-fill .modal-body form div.modal-submit .button-invert {
+  width: 100px;
+}
+/*# sourceMappingURL=style.css.map */
