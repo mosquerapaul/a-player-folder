@@ -8,8 +8,8 @@ const AUDIOFOLDER = './audio';
  * and send them to the next MW as req.files
  ****************************************/
 
+var audioList = {};
 const playlistController = (req, res, next) => {
-    var audioList;
     fs.readdir(AUDIOFOLDER, (err, files) => {
         files = files.filter(file => /\.mp3$/.test(file.toLocaleLowerCase()))
         //console.log(files);
@@ -32,11 +32,12 @@ const playlistToDBController = (req, res, next) => {
 
 const playlistShowController = (req, res, next) => {
     var files = req.files;
-    audioList = files.reduce((ac, audio, ind, arr) => {
+    audioList.files = files;
+    audioList.html = files.reduce((ac, audio, ind, arr) => {
         ac += '<li class="audio">' + audio + '</li>';
         return ac;
     }, '<ol>');
-    audioList += '</ol>';
+    audioList.html += '</ol>';
     res.send(audioList);
     next();
 }

@@ -43,6 +43,7 @@ app.post(['/file-upload', '/audioupload'], uploadController);
  * STATIC FILES 
 ************************************************/
 app.use( '/public', express.static('public'));
+app.use( '/audio', express.static('audio'));
 
 
 

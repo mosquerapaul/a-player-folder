@@ -17,6 +17,9 @@
 
 
     <script type="text/javascript" src="../public/js/functions.js"> </script>
+    <script type="text/javascript" src="../public/js/modalUpload.js"> </script>
+    <script type="text/javascript" src="../public/js/playerControls.js"> </script>
+    
     <title>Folder Audio Player</title>
 </head>
 <body>
@@ -49,11 +52,15 @@
             <!-- PLAYER LIST -->
             <section id="player">
                 <main id="faplayer-audiolist" class="center container"></main>
+                <audio src="" id="audioPlayer"></audio>
                 <div class="bottom-container">
                     <article id="playing-info" class="container">
-                        <p id="audio-name">Name of the audio playing
-                            <span id="audio-duration">3:35</span>
+                        <p class="trackinfo">
+                            <span id="audio-name">-- No file playing --</span>
+                            <span id="audio-duration">0:00 / 0:00</span>
+
                         </p>
+                        
                         <div id="progress-bar-background">
                             <div id="progress-bar"><i class="fas fa-compact-disc"></i></div>
                             
@@ -62,8 +69,10 @@
                     <article id="controls" class="center">
                         <ul class="controls">
                             <li id="prev" class="control"><i class="fas fa-step-backward"></i></li>
-                            <li id="play" class="control"><i class="fas fa-play"></i></li>
-                            <li id="pause" class="control"><i class="fas fa-pause-circle"></i></li>
+                            <div id="start-stop">
+                                <li id="play" class="control"><i class="fas fa-play"></i></li>
+                                <li id="pause" class="control"><i class="fas fa-pause"></i></li>
+                            </div>
                             <li id="next" class="control"><i class="fas fa-step-forward"></i></li>
                         </ul>
                     </article>

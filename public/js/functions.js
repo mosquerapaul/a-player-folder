@@ -1,21 +1,20 @@
-const hideModal = function() {
-    $('#modalUpload').fadeOut(1000);
+
+
+var audiolistFiles;
+var loadFiles = function() {
+    $.ajax({
+        type: 'GET',
+        url: '/playlist',
+        success: function(response) {
+            $('#faplayer-audiolist').html(response.html);
+            audiolistFiles = response.files;
+            playingStatus.files = audiolistFiles;
+            playingStatus.ready = true;
+        }
+    });
+    userMessage('Playlist ready', 2000);
 }
 
-const showModal = function() {
-    if($('#modalUpload').html() === '') {
-        $.ajax({
-            type: 'GET',
-            url: '/modal-upload',
-            success: function (response) {
-                $('#modalUpload').html(response).fadeIn(1000);
-            }
-        });
-    } else {
-        $('#modalUpload').fadeIn(1000);
-    }
-
-}
 
 var userMessage = function (msg, timeDelay) {
     $("#urerMsg").empty().text(msg);
@@ -25,17 +24,10 @@ var userMessage = function (msg, timeDelay) {
 
 
 $(function() {
-    $('#modalUpload').hide(0);
+    loadFiles();
     $('#loadList').on('click', function() {
-        $.ajax({
-            type: 'GET',
-            url: '/playlist',
-            success: function(response) {
-                $('#faplayer-audiolist').html(response);
-            }
-        });
+        loadFiles();
     });
-
 
     // NOT IMPLEMENTED
     $('#dbupdate').on('click', function() {
@@ -46,13 +38,6 @@ $(function() {
                 console.log(`load success: \n${response}`);
             }
         });
-    });
-    $('#new-audio').on('click', function() {
-        showModal();
-    });
-    $('#modalUpload').on('click', function(e) {
-        if (e.target.id !== 'modal-background' && e.target.id !== 'modal-close') return;
-        hideModal();
     });
 
 
