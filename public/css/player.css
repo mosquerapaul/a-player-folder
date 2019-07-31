@@ -33,7 +33,7 @@
 
 #faplayer-audiolist {
     vertical-align: top;
-    padding: 20px;
+    padding: 10px;
     height: calc(100% - 105px);
     overflow-y: auto;
     -webkit-box-shadow: inset 0px -15px 15px -9px rgba(0,0,0,0.4);

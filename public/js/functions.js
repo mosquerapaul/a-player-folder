@@ -1,5 +1,3 @@
-
-
 var audiolistFiles;
 var loadFiles = function() {
     $.ajax({
@@ -13,6 +11,16 @@ var loadFiles = function() {
         }
     });
     userMessage('Playlist ready', 2000);
+}
+
+var dbupdate = function() {
+    $.ajax({
+        type: 'GET',
+        url: '/playlist',
+        success: function(response) {
+            console.log(`load success: \n${response}`);
+        }
+    });
 }
 
 
@@ -31,13 +39,7 @@ $(function() {
 
     // NOT IMPLEMENTED
     $('#dbupdate').on('click', function() {
-        $.ajax({
-            type: 'GET',
-            url: '/playlist',
-            success: function(response) {
-                console.log(`load success: \n${response}`);
-            }
-        });
+        dbUpdate();
     });
 
 

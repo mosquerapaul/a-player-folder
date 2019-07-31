@@ -27,7 +27,7 @@ var playAudio = function(file, changeAudio) {
     if(playingStatus.file === undefined || changeAudio) {
         playingStatus.file = '../audio/' + audiolistFiles[playingStatus.index];
         file.src = playingStatus.file;
-        playingStatus.audioName = audiolistFiles[playingStatus.index].slice(0, -4)
+        playingStatus.audioName = audiolistFiles[playingStatus.index].slice(0, -4);
         $('#audio-name').html(playingStatus.audioName);
     }
     file.play();
@@ -36,7 +36,6 @@ var playAudio = function(file, changeAudio) {
 }
 
 var nextAudio = function(file) {
-    console.log(playingStatus.files.length);
     if(playingStatus.index < playingStatus.files.length) {
         playingStatus.index++;
         playAudio(file, true);
@@ -62,10 +61,12 @@ $(function() {
      * volume - get or set the volume of the audio
      * muted - get or set if the audio is muted
     **************************/
+
+    /*  INIT THE AUDIO STATUS   */
     playingStatus.ready = false;
     playingStatus.index = 0;
     var playingFile = new Audio;
-    playingFile.volume= 0.2;
+    playingFile.volume= 0.3;
 
     $('#start-stop').on('click', function(e) {
         if (playingStatus.ready) {

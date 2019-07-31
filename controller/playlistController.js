@@ -34,7 +34,7 @@ const playlistShowController = (req, res, next) => {
     var files = req.files;
     audioList.files = files;
     audioList.html = files.reduce((ac, audio, ind, arr) => {
-        ac += '<li class="audio">' + audio + '</li>';
+        ac += '<li class="audio">' + audio.slice(0, -4) + '</li>';
         return ac;
     }, '<ol>');
     audioList.html += '</ol>';
