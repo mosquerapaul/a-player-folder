@@ -45,4 +45,5 @@ const playlistShowController = (req, res, next) => {
 module = module.exports = {
     playlistController, 
     playlistToDBController, 
-    playlistShowController};
+    playlistShowController
+};
