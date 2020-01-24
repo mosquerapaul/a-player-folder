@@ -13,7 +13,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "nodemon router.js"
+    "test": "nodemon router.js",
+    "start": "node router.js"
   },
   "keywords": [
     "music",
