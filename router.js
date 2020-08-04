@@ -5,7 +5,10 @@ const path = require('path');
 const app = express();
 const bodyParser = require('body-parser');
 
-const PORT = 3000;
+const normalizePort = require('normalize-port');
+
+const PORT = normalizePort(process.env.PORT || '3000');
+
 
 
 /***********************************************
