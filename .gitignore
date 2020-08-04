@@ -1,5 +1,5 @@
 # audio directory
-audio/
+audio-*/
 
 # Logs
 logs
