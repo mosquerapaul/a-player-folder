@@ -6,7 +6,6 @@ const app = express();
 const bodyParser = require('body-parser');
 
 const normalizePort = require('normalize-port');
-
 const PORT = normalizePort(process.env.PORT || '3000');
 
 
