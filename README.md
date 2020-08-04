@@ -1,8 +1,16 @@
 # a-player-folder
 Audio player to play all files located in the /audio folder
 
+## Update 
+I'm working in an Angular version of the project, so there are not updates spected.
+Angular version: https://github.com/mosquerapaul/audio-player
+
 # Description
 This is a project similar to a gallery for audio files. Just put your audio files into a folder and it will manage to add all of them to the player.
+
+## Live test 
+https://audio-player-node-jquery.herokuapp.com/
+Heroku will prevent to upload files, so you need to install the app into a local server to check this functionality.
 
 # Installation
 At the moment the project is created as an app, so you can check and test:
